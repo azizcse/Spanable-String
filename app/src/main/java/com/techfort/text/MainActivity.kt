@@ -64,5 +64,14 @@ class MainActivity : AppCompatActivity(), OnClickableSpanListener {
                     + "  EndSpanIndex: " + clickableSpan.getEndSpanIndex(), Toast.LENGTH_SHORT
         ).show()
     }
+    
+    /*
+    azizul [1:58 PM]
+mithu@w3engineers.com
+
+hr@w3engineers.com
+rakib@w3engineers.com
+ayesha@w3engineers.com
+    */
 
 }
