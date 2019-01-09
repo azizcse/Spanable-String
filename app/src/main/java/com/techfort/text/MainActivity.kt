@@ -21,8 +21,22 @@ class MainActivity : AppCompatActivity(), OnClickableSpanListener {
         setContentView(R.layout.activity_main)
         textView = findViewById(R.id.text)
 
+        val stringArray = arrayListOf<String>("There ", "are ", "many ", "people ", "in ", "our ", "country ", "are ", "unemployed ")
+
         val simplifySpanBuild41 = SimplifySpanBuild()
-        simplifySpanBuild41.append("Hello ")
+        var isEven = false;
+        for (i in stringArray.indices){
+            if(isEven){
+                simplifySpanBuild41.append(SpecialTextUnit(stringArray.get(i)).setClickableUnit(SpecialClickableUnit(textView, this).setTag(i)).setTextColor(Color.BLUE))
+                isEven = false
+            }else{
+                simplifySpanBuild41.append(SpecialTextUnit(stringArray.get(i)).setClickableUnit(SpecialClickableUnit(textView, this).setTag(i)).setTextColor(Color.CYAN))
+                isEven = true
+            }
+        }
+        textView.text = simplifySpanBuild41.build()
+
+       /* simplifySpanBuild41.append("Hello ")
             .append(
                 SpecialTextUnit("are ").setClickableUnit(
                     SpecialClickableUnit(
@@ -50,10 +64,10 @@ class MainActivity : AppCompatActivity(), OnClickableSpanListener {
                     SpecialClickableUnit(textView, this).setTag("3").setPressBgColor(Color.BLUE).setPressTextColor(
                         Color.WHITE
                     )
-                ).setTextColor(-0xb000).setTextBackgroundColor(-0x783115)
+                ).setTextColor(-0xb000).setTextBackgroundColor(795548)
             )
             .append("any ")
-        textView.text = simplifySpanBuild41.build()
+        textView.text = simplifySpanBuild41.build()*/
     }
 
     override fun onClick(tv: TextView?, clickableSpan: CustomClickableSpan?) {
